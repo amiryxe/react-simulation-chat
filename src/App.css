@@ -12,21 +12,27 @@ input[type='text'] {
   border-radius: 20px;
 }
 
+.messages {
+  min-height: 200px;
+}
+
 .message-card {
   padding: 1rem;
   border-radius: 10px;
   position: relative;
+  clear: both;
+  margin-bottom: 3px;
 }
 
 .message-send {
   background: lightblue;
-  margin-left: 3rem;
+  float: right;
   border-top-right-radius: 0;
 }
 
 .message-receive {
   background: lightgreen;
-  margin-right: 3rem;
+  float: left;
   border-top-left-radius: 0;
 }
 
@@ -60,4 +66,9 @@ input[type='text'] {
   margin-top: 0;
   margin-right: -10px;
   transform: rotate(180deg);
+}
+
+.input-chat {
+  clear: both;
+  margin-top: 4rem;
 }
