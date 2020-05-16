@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import MessageList from '../components/MessageList';
 import {
   Button,
@@ -58,6 +58,12 @@ const Chat = () => {
   const messageChangeHandler = (e) => {
     setMessageText(e.target.value);
   };
+
+  useEffect(() => {
+    document.querySelector('.messages').scrollTop = document.querySelector(
+      '.messages'
+    ).scrollHeight;
+  }, [messages]);
 
   return (
     <div className='container'>
