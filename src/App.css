@@ -20,6 +20,22 @@ input[type='text'] {
   padding: 1rem;
 }
 
+.messages::-webkit-scrollbar-track {
+  border-radius: 10px;
+  background-color: #eee;
+}
+
+.messages::-webkit-scrollbar {
+  width: 8px;
+  background-color: #eee;
+  border-radius: 10px;
+}
+
+.messages::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background-color: #ccc;
+}
+
 .message-card {
   padding: 1rem;
   border-radius: 10px;
