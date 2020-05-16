@@ -36,7 +36,7 @@ const Chat = () => {
             <ChatBox
               userType='send'
               userName='Amir'
-              pic={{ character: 'A', color: 'Cyan' }}
+              color='Cyan'
               messages={messages}
               setMessages={setMessages}
             />
@@ -45,7 +45,7 @@ const Chat = () => {
             <ChatBox
               userType='receive'
               userName='Sara'
-              pic={{ character: 'S', color: 'Green' }}
+              color='Green'
               messages={messages}
               setMessages={setMessages}
             />

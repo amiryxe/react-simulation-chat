@@ -4,7 +4,7 @@ import { formatAMPM } from '../util/time';
 import { Button, Row, Col, Avatar, Card, Input, Tooltip } from 'antd';
 import { SmileOutlined } from '@ant-design/icons';
 
-const ChatBox = ({ messages, setMessages, userType, userName, pic }) => {
+const ChatBox = ({ messages, setMessages, userType, userName, color }) => {
   const [messageText, setMessageText] = useState('');
 
   const sendMessageHandler = (e) => {
@@ -40,11 +40,11 @@ const ChatBox = ({ messages, setMessages, userType, userName, pic }) => {
       extra={
         <Avatar
           style={{
-            color: `dark${pic.color}`,
-            backgroundColor: `light${pic.color}`,
+            color: `dark${color}`,
+            backgroundColor: `light${color}`,
           }}
         >
-          {pic.character}
+          {userName[0].toUpperCase()}
         </Avatar>
       }
       bordered={false}
