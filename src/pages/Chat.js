@@ -1,11 +1,23 @@
 import React from 'react';
-import { Button, Row, Col, Avatar, Card, Layout, Input, Tooltip } from 'antd';
+import {
+  Button,
+  Row,
+  Col,
+  Avatar,
+  Card,
+  Layout,
+  Input,
+  Tooltip,
+  Typography,
+} from 'antd';
 import { SmileOutlined } from '@ant-design/icons';
+const { Title } = Typography;
 
 const Chat = () => {
   return (
     <div className='container'>
-      <Layout style={{ padding: '0 50px', background: 'transparent' }}>
+      <Layout style={{ padding: '3rem', background: 'transparent' }}>
+        <Title style={{ marginTop: '1rem' }}>React Simulation Chat</Title>
         <Row>
           <Col span={12}>
             <Card
@@ -21,9 +33,9 @@ const Chat = () => {
               style={{ width: 350 }}
             >
               <div className='messages'>
-                <p>text</p>
+                <p className='message-send'>text</p>
 
-                <p>text</p>
+                <p className='message-receive'>text</p>
               </div>
 
               <div className='input-chat'>

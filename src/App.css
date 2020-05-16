@@ -11,3 +11,17 @@ body {
 input[type='text'] {
   border-radius: 20px;
 }
+
+.message-send {
+  background: lightblue;
+  padding: 1rem;
+  border-radius: 10px;
+  margin-left: 3rem;
+}
+
+.message-receive {
+  background: lightgreen;
+  padding: 1rem;
+  border-radius: 10px;
+  margin-right: 3rem;
+}
