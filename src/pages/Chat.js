@@ -35,6 +35,23 @@ const Chat = () => {
       time: '22:32 PM',
     },
   ]);
+
+  const sendMessageHandler = (e) => {
+    e.preventDefault();
+
+    setMessages([
+      ...messages,
+      {
+        id: Math.random(),
+        type: 'send',
+        text: e.target.elements.messageField.value,
+        time: '12:12',
+      },
+    ]);
+
+    e.target.elements.messageField.value = '';
+  };
+
   return (
     <div className='container'>
       <Layout style={{ padding: '3rem', background: 'transparent' }}>
@@ -64,7 +81,12 @@ const Chat = () => {
                   </Col>
 
                   <Col flex={10}>
-                    <Input placeholder='Type a message...' />
+                    <form onSubmit={sendMessageHandler}>
+                      <Input
+                        name='messageField'
+                        placeholder='Type a message...'
+                      />
+                    </form>
                   </Col>
                 </Row>
               </div>
