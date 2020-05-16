@@ -47,16 +47,17 @@ input[type='text'] {
   position: relative;
   clear: both;
   margin-bottom: 3px;
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.03);
 }
 
 .message-send {
-  background: lightblue;
+  background: #dcf8c6;
   float: right;
   border-top-right-radius: 0;
 }
 
 .message-receive {
-  background: lightgreen;
+  background: white;
   float: left;
   border-top-left-radius: 0;
 }
@@ -69,7 +70,7 @@ input[type='text'] {
   width: 0;
   height: 0;
   border: 10px solid transparent;
-  border-right-color: lightgreen;
+  border-right-color: white;
   border-left: 0;
   border-bottom: 0;
   margin-top: 0;
@@ -85,7 +86,7 @@ input[type='text'] {
   width: 0;
   height: 0;
   border: 10px solid transparent;
-  border-right-color: lightblue;
+  border-right-color: #dcf8c6;
   border-left: 0;
   border-bottom: 0;
   margin-top: 0;
