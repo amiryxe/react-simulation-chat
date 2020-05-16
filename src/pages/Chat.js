@@ -17,7 +17,7 @@ const Chat = () => {
   return (
     <div className='container'>
       <Layout style={{ padding: '3rem', background: 'transparent' }}>
-        <Title style={{ marginTop: '1rem' }}>React Simulation Chat</Title>
+        <Title style={{ margin: '2rem 0' }}>React Simulation Chat</Title>
         <Row>
           <Col span={12}>
             <Card
@@ -33,11 +33,23 @@ const Chat = () => {
               style={{ width: 350 }}
             >
               <div className='messages'>
-                <span className='message-card message-send'>text</span>
+                <span className='message-card message-send'>
+                  <p>text of message</p>
+                  <p className='message-time'>12:23 PM</p>
+                </span>
 
-                <span className='message-card message-receive'>text</span>
-                <span className='message-card message-receive'>text</span>
-                <span className='message-card message-receive'>text</span>
+                <span className='message-card message-receive'>
+                  <p>text of message</p>
+                  <p className='message-time'>12:23 PM</p>
+                </span>
+                <span className='message-card message-receive'>
+                  <p>text of message</p>
+                  <p className='message-time'>12:23 PM</p>
+                </span>
+                <span className='message-card message-receive'>
+                  <p>text of message</p>
+                  <p className='message-time'>12:23 PM</p>
+                </span>
               </div>
 
               <div className='input-chat'>
