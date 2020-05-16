@@ -48,7 +48,6 @@ input[type='text'] {
   background: lightblue;
   float: right;
   border-top-right-radius: 0;
-  margin-bottom: 1rem;
 }
 
 .message-receive {

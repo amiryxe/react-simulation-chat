@@ -36,20 +36,27 @@ const Chat = () => {
     },
   ]);
 
+  const [messageText, setMessageText] = useState('');
+
   const sendMessageHandler = (e) => {
     e.preventDefault();
 
-    setMessages([
-      ...messages,
-      {
-        id: Math.random(),
-        type: 'send',
-        text: e.target.elements.messageField.value,
-        time: '12:12',
-      },
-    ]);
+    if (messageText) {
+      setMessages([
+        ...messages,
+        {
+          id: Math.random(),
+          type: 'send',
+          text: messageText,
+          time: '12:12',
+        },
+      ]);
+    }
+    setMessageText('');
+  };
 
-    e.target.elements.messageField.value = '';
+  const messageChangeHandler = (e) => {
+    setMessageText(e.target.value);
   };
 
   return (
@@ -83,7 +90,8 @@ const Chat = () => {
                   <Col flex={10}>
                     <form onSubmit={sendMessageHandler}>
                       <Input
-                        name='messageField'
+                        onChange={messageChangeHandler}
+                        value={messageText}
                         placeholder='Type a message...'
                       />
                     </form>
