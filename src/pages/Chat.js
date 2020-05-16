@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useState } from 'react';
+import MessageList from '../components/MessageList';
 import {
   Button,
   Row,
@@ -14,6 +15,26 @@ import { SmileOutlined } from '@ant-design/icons';
 const { Title } = Typography;
 
 const Chat = () => {
+  const [messages, setMessages] = useState([
+    {
+      id: 1,
+      type: 'send',
+      text: 'Text of message 1',
+      time: '22:30 PM',
+    },
+    {
+      id: 2,
+      type: 'receive',
+      text: 'Text of message 2',
+      time: '22:31 PM',
+    },
+    {
+      id: 3,
+      type: 'send',
+      text: 'Text of message 3',
+      time: '22:32 PM',
+    },
+  ]);
   return (
     <div className='container'>
       <Layout style={{ padding: '3rem', background: 'transparent' }}>
@@ -26,31 +47,13 @@ const Chat = () => {
                 <Avatar
                   style={{ color: '#f56a00', backgroundColor: '#fde3cf' }}
                 >
-                  U
+                  A
                 </Avatar>
               }
               bordered={false}
               style={{ width: 350 }}
             >
-              <div className='messages'>
-                <span className='message-card message-send'>
-                  <p>text of message</p>
-                  <p className='message-time'>12:23 PM</p>
-                </span>
-
-                <span className='message-card message-receive'>
-                  <p>text of message</p>
-                  <p className='message-time'>12:23 PM</p>
-                </span>
-                <span className='message-card message-receive'>
-                  <p>text of message</p>
-                  <p className='message-time'>12:23 PM</p>
-                </span>
-                <span className='message-card message-receive'>
-                  <p>text of message</p>
-                  <p className='message-time'>12:23 PM</p>
-                </span>
-              </div>
+              <MessageList messages={messages} />
 
               <div className='input-chat'>
                 <Row>
