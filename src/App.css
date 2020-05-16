@@ -99,3 +99,7 @@ input[type='text'] {
   clear: both;
   margin-top: 2rem;
 }
+
+.ant-card-head-title {
+  text-align: left;
+}

@@ -1,21 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import MessageList from '../components/MessageList';
+import { formatAMPM } from '../util/time';
 import { Button, Row, Col, Avatar, Card, Input, Tooltip } from 'antd';
 import { SmileOutlined } from '@ant-design/icons';
 
-const ChatBox = ({ type, messages, setMessages, user, pic }) => {
+const ChatBox = ({ messages, setMessages, userType, userName, pic }) => {
   const [messageText, setMessageText] = useState('');
-
-  function formatAMPM(date) {
-    var hours = date.getHours();
-    var minutes = date.getMinutes();
-    var ampm = hours >= 12 ? 'PM' : 'AM';
-    hours = hours % 12;
-    hours = hours ? hours : 12; // the hour '0' should be '12'
-    minutes = minutes < 10 ? '0' + minutes : minutes;
-    var strTime = hours + ':' + minutes + ' ' + ampm;
-    return strTime;
-  }
 
   const sendMessageHandler = (e) => {
     e.preventDefault();
@@ -25,7 +15,7 @@ const ChatBox = ({ type, messages, setMessages, user, pic }) => {
         ...messages,
         {
           id: Math.random(),
-          type: type === 'send' ? 'send' : 'receive',
+          type: userType === 'send' ? 'send' : 'receive',
           text: messageText,
           time: formatAMPM(new Date()),
         },
@@ -46,7 +36,7 @@ const ChatBox = ({ type, messages, setMessages, user, pic }) => {
 
   return (
     <Card
-      title={user}
+      title={userName}
       extra={
         <Avatar
           style={{
@@ -60,7 +50,7 @@ const ChatBox = ({ type, messages, setMessages, user, pic }) => {
       bordered={false}
       style={{ width: 350 }}
     >
-      <MessageList messages={messages} />
+      <MessageList messages={messages} userType={userType} />
 
       <div className='input-chat'>
         <Row>

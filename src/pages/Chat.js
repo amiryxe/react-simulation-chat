@@ -32,19 +32,19 @@ const Chat = () => {
           React Simulation Chat
         </Title>
         <Row>
-          <Col span={12} justify='space-around' align='middle'>
+          <Col span={12} align='middle'>
             <ChatBox
-              type='send'
-              user='Amir'
+              userType='send'
+              userName='Amir'
               pic={{ character: 'A', color: 'Cyan' }}
               messages={messages}
               setMessages={setMessages}
             />
           </Col>
-          <Col span={12} justify='space-around' align='middle'>
+          <Col span={12} align='middle'>
             <ChatBox
-              type='receive'
-              user='Sara'
+              userType='receive'
+              userName='Sara'
               pic={{ character: 'S', color: 'Green' }}
               messages={messages}
               setMessages={setMessages}
