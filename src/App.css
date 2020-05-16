@@ -12,16 +12,52 @@ input[type='text'] {
   border-radius: 20px;
 }
 
-.message-send {
-  background: lightblue;
+.message-card {
   padding: 1rem;
   border-radius: 10px;
+  position: relative;
+}
+
+.message-send {
+  background: lightblue;
   margin-left: 3rem;
+  border-top-right-radius: 0;
 }
 
 .message-receive {
   background: lightgreen;
-  padding: 1rem;
-  border-radius: 10px;
   margin-right: 3rem;
+  border-top-left-radius: 0;
+}
+
+.message-receive:after {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 0;
+  height: 0;
+  border: 10px solid transparent;
+  border-right-color: lightgreen;
+  border-left: 0;
+  border-bottom: 0;
+  margin-top: 0;
+  margin-left: -10px;
+  transform: rotate(-90deg);
+}
+
+.message-send:after {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 0;
+  height: 0;
+  border: 10px solid transparent;
+  border-right-color: lightblue;
+  border-left: 0;
+  border-bottom: 0;
+  margin-top: 0;
+  margin-right: -10px;
+  transform: rotate(180deg);
 }

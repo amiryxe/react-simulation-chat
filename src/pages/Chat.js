@@ -33,9 +33,9 @@ const Chat = () => {
               style={{ width: 350 }}
             >
               <div className='messages'>
-                <p className='message-send'>text</p>
+                <p className='message-card message-send'>text</p>
 
-                <p className='message-receive'>text</p>
+                <p className='message-card message-receive'>text</p>
               </div>
 
               <div className='input-chat'>
