@@ -8,19 +8,19 @@ const Chat = () => {
     {
       id: 1,
       type: 'send',
-      text: 'Text of message 1',
+      text: 'Hi!',
       time: '22:30 PM',
     },
     {
       id: 2,
-      type: 'receive',
-      text: 'Text of message 2',
+      type: 'send',
+      text: 'How are you?',
       time: '22:31 PM',
     },
     {
       id: 3,
-      type: 'send',
-      text: 'Text of message 3',
+      type: 'receive',
+      text: 'Heyyy, Fine. Thanks...',
       time: '22:32 PM',
     },
   ]);

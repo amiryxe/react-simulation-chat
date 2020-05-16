@@ -51,7 +51,7 @@ input[type='text'] {
 }
 
 .message-send {
-  background: #dcf8c6;
+  background: #cfeeb8;
   float: right;
   border-top-right-radius: 0;
 }
@@ -86,7 +86,7 @@ input[type='text'] {
   width: 0;
   height: 0;
   border: 10px solid transparent;
-  border-right-color: #dcf8c6;
+  border-right-color: #cfeeb8;
   border-left: 0;
   border-bottom: 0;
   margin-top: 0;
