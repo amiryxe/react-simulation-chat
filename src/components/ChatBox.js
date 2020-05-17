@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import MessageList from '../components/MessageList';
+import Emojis from '../components/Emojis';
 import { formatAMPM } from '../util/time';
 import { Button, Row, Col, Avatar, Card, Input, Tooltip, Popover } from 'antd';
 import { SmileOutlined } from '@ant-design/icons';
@@ -62,6 +63,8 @@ const ChatBox = ({
         userType={userType}
         background={background}
       />
+
+      <Emojis />
 
       <div className='input-chat'>
         <Row>
