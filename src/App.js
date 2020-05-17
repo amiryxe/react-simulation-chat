@@ -1,12 +1,15 @@
 import React from 'react';
 import Chat from './pages/Chat';
+import MainState from './context/MainState';
 import './App.css';
 
 function App() {
   return (
-    <div className='App'>
-      <Chat />
-    </div>
+    <MainState>
+      <div className='App'>
+        <Chat />
+      </div>
+    </MainState>
   );
 }
 

@@ -1,58 +1,13 @@
-import React, { useState } from 'react';
+import React, { useContext } from 'react';
 import EmojiItem from './EmojiItem';
+import MainContext from '../context/mainContext';
 import './Emojis.css';
 
 const Emojis = () => {
-  const [emojiList, setEmojiList] = useState([
-    {
-      id: 1,
-      emoji: '😀',
-    },
-    {
-      id: 2,
-      emoji: '😁',
-    },
-    {
-      id: 3,
-      emoji: '😂',
-    },
-    {
-      id: 4,
-      emoji: '😄',
-    },
-    {
-      id: 5,
-      emoji: '😍',
-    },
-    {
-      id: 6,
-      emoji: '🙄',
-    },
-    {
-      id: 7,
-      emoji: '😊',
-    },
-    {
-      id: 8,
-      emoji: '😫',
-    },
-    {
-      id: 9,
-      emoji: '😭',
-    },
-    {
-      id: 10,
-      emoji: '🤢',
-    },
-    {
-      id: 11,
-      emoji: '🌹',
-    },
-    {
-      id: 12,
-      emoji: '❤',
-    },
-  ]);
+  const emojiContext = useContext(MainContext);
+
+  const { emojiList } = emojiContext;
+
   return (
     <ul className='emoji-list'>
       {emojiList.map((item) => (
