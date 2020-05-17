@@ -38,7 +38,7 @@ const Chat = () => {
               userType='send'
               userName='Amir'
               color='Cyan'
-              background={{ pattern: Pattern, color: '#666' }}
+              background={{ pattern: Pattern, color: '#777' }}
               messages={messages}
               setMessages={setMessages}
             />

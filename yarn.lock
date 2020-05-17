@@ -30,10 +30,10 @@
     insert-css "^2.0.0"
     rc-util "^4.9.0"
 
-"@ant-design/react-slick@~0.25.5":
-  version "0.25.6"
-  resolved "https://registry.yarnpkg.com/@ant-design/react-slick/-/react-slick-0.25.6.tgz#4e826b1519e46727b37a10f372fd21a7e220e660"
-  integrity sha512-2rsC0yaccew3V9HxwmIp4PAsWgickH1B05qoimkVZ+A7JQgj5Gowje5V+/hMtyjlpxAhZZQm9WR2oeyNVI0Oyw==
+"@ant-design/react-slick@~0.26.1":
+  version "0.26.1"
+  resolved "https://registry.yarnpkg.com/@ant-design/react-slick/-/react-slick-0.26.1.tgz#1462ad1342a83af51b7ea4ee0ae1d76d91d1b3d3"
+  integrity sha512-1CR3vNFxAMmMb9btF6w9yT1xlrhZr6f/K+OkqoCLfWxN7h7jC16UCr1RsGBoFUdSq8bYfTr3pe6AiiCEDsALvA==
   dependencies:
     classnames "^2.2.5"
     json2mq "^0.2.0"
@@ -1961,14 +1961,14 @@ ansi-styles@^4.0.0, ansi-styles@^4.1.0:
     "@types/color-name" "^1.1.1"
     color-convert "^2.0.1"
 
-antd@^4.2.2:
-  version "4.2.2"
-  resolved "https://registry.yarnpkg.com/antd/-/antd-4.2.2.tgz#223ea6b3b3b5ce1a47d390f271c1b145ea9c5c15"
-  integrity sha512-X+b6LfcuF+jR1VyGahvnYtER9BmjrKXW9xCCmHkVrMK5G84eeptbzxy0N3s58dWcpvyUJNmzTrf/EOsUtR05kg==
+antd@^4.2.3:
+  version "4.2.3"
+  resolved "https://registry.yarnpkg.com/antd/-/antd-4.2.3.tgz#ee9b218cb04acb990a113a78ded934318a782a94"
+  integrity sha512-U7QVJLN9wtSsNVBdrCmQkT8dE6VihNHYIT48/UMty8RE8FtCwljgjJe0PGKOj/tHiPTJv20jiknXotr8rj6J4Q==
   dependencies:
     "@ant-design/css-animation" "^1.7.2"
     "@ant-design/icons" "^4.1.0"
-    "@ant-design/react-slick" "~0.25.5"
+    "@ant-design/react-slick" "~0.26.1"
     array-tree-filter "^2.1.0"
     classnames "~2.2.6"
     copy-to-clipboard "^3.2.0"
@@ -1990,8 +1990,8 @@ antd@^4.2.2:
     rc-menu "~8.1.0"
     rc-notification "~4.3.0"
     rc-pagination "~2.2.0"
-    rc-picker "~1.4.0"
-    rc-progress "~2.5.0"
+    rc-picker "~1.4.16"
+    rc-progress "~3.0.0"
     rc-rate "~2.6.0"
     rc-resize-observer "^0.2.0"
     rc-select "~10.3.0"
@@ -3912,6 +3912,11 @@ elliptic@^6.0.0:
     inherits "^2.0.1"
     minimalistic-assert "^1.0.0"
     minimalistic-crypto-utils "^1.0.0"
+
+emoji-picker-react@^3.1.6:
+  version "3.1.6"
+  resolved "https://registry.yarnpkg.com/emoji-picker-react/-/emoji-picker-react-3.1.6.tgz#004ae3bef22e700b314d8a73274eaacde34f010d"
+  integrity sha512-2iACwlf9UqCLY+7UL6iXH3zeDj4RA4Cdm5t2Sj7Ub4QSJPR1GhbW8ldoutADPnxu4Wf1X3Uy9m2HqdoaNC/9eQ==
 
 emoji-regex@^7.0.1, emoji-regex@^7.0.2:
   version "7.0.3"
@@ -8487,7 +8492,7 @@ prompts@^2.0.1:
     kleur "^3.0.3"
     sisteransi "^1.0.4"
 
-prop-types@^15.5.10, prop-types@^15.5.8, prop-types@^15.5.9, prop-types@^15.6.0, prop-types@^15.6.2, prop-types@^15.7.2:
+prop-types@^15.5.10, prop-types@^15.5.9, prop-types@^15.6.0, prop-types@^15.6.2, prop-types@^15.7.2:
   version "15.7.2"
   resolved "https://registry.yarnpkg.com/prop-types/-/prop-types-15.7.2.tgz#52c41e75b8c87e72b9d9360e0206b99dcbffa6c5"
   integrity sha512-8QQikdH7//R2vurIJSutZ1smHYTcLpRWEOlHnzcWHmBYrOGUysKwSsrC89BCiFj3CbrfJ/nXFdJepOVrY1GCHQ==
@@ -8797,7 +8802,7 @@ rc-pagination@~2.2.0:
   dependencies:
     classnames "^2.2.1"
 
-rc-picker@~1.4.0:
+rc-picker@~1.4.16:
   version "1.4.16"
   resolved "https://registry.yarnpkg.com/rc-picker/-/rc-picker-1.4.16.tgz#50b6bde3d237cc327917353d21e3bb9ce004ee5c"
   integrity sha512-aGMwyVX2Tt5Dv8xjpICoqn0nZW7PtTBfGwxevznCB/8doRrhs0jtU/zhSm3806hqJ8viR65v+fmwtXHi3HMc5w==
@@ -8808,13 +8813,12 @@ rc-picker@~1.4.0:
     rc-util "^4.17.0"
     shallowequal "^1.1.0"
 
-rc-progress@~2.5.0:
-  version "2.5.3"
-  resolved "https://registry.yarnpkg.com/rc-progress/-/rc-progress-2.5.3.tgz#00f01b95bdbe1856d3a5f82242051902e8b7a8e7"
-  integrity sha512-K2fa4CnqGehLZoMrdmBeZ86ONSTVcdk5FlqetbwJ3R/+42XfqhwQVOjWp2MH4P7XSQOMAGcNOy1SFfCP3415sg==
+rc-progress@~3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/rc-progress/-/rc-progress-3.0.0.tgz#cea324ce8fc31421cd815d94a4649a8a29f8f8db"
+  integrity sha512-dQv1KU3o6Vay604FMYMF4S0x4GNXAgXf1tbQ1QoxeIeQt4d5fUeB7Ri82YPu+G+aRvH/AtxYAlEcnxyVZ1/4Hw==
   dependencies:
-    babel-runtime "6.x"
-    prop-types "^15.5.8"
+    classnames "^2.2.6"
 
 rc-rate@~2.6.0:
   version "2.6.0"

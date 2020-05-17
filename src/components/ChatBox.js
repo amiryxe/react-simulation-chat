@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import MessageList from '../components/MessageList';
 import { formatAMPM } from '../util/time';
-import { Button, Row, Col, Avatar, Card, Input, Tooltip } from 'antd';
+import { Button, Row, Col, Avatar, Card, Input, Tooltip, Popover } from 'antd';
 import { SmileOutlined } from '@ant-design/icons';
 
 const ChatBox = ({
@@ -66,9 +66,11 @@ const ChatBox = ({
       <div className='input-chat'>
         <Row>
           <Col flex={2} style={{ textAlign: 'left' }}>
-            <Tooltip title='Emoji'>
-              <Button shape='circle' icon={<SmileOutlined />} />
-            </Tooltip>
+            <Popover content='salam' title='Title' trigger='click'>
+              <Tooltip placement='bottom' title='Emoji'>
+                <Button shape='circle' icon={<SmileOutlined />} />
+              </Tooltip>
+            </Popover>
           </Col>
 
           <Col flex={10}>
