@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import ChatBox from '../components/ChatBox';
 import { Row, Col, Layout, Typography } from 'antd';
+import Pattern from '../assets/img/pattern.png';
 const { Title } = Typography;
 
 const Chat = () => {
@@ -37,6 +38,7 @@ const Chat = () => {
               userType='send'
               userName='Amir'
               color='Cyan'
+              background={{ pattern: Pattern, color: '#666' }}
               messages={messages}
               setMessages={setMessages}
             />
@@ -46,6 +48,7 @@ const Chat = () => {
               userType='receive'
               userName='Sara'
               color='Green'
+              background={{ pattern: Pattern, color: '#eee' }}
               messages={messages}
               setMessages={setMessages}
             />

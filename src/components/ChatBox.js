@@ -4,7 +4,14 @@ import { formatAMPM } from '../util/time';
 import { Button, Row, Col, Avatar, Card, Input, Tooltip } from 'antd';
 import { SmileOutlined } from '@ant-design/icons';
 
-const ChatBox = ({ messages, setMessages, userType, userName, color }) => {
+const ChatBox = ({
+  messages,
+  setMessages,
+  userType,
+  userName,
+  color,
+  background,
+}) => {
   const [messageText, setMessageText] = useState('');
 
   const sendMessageHandler = (e) => {
@@ -50,7 +57,11 @@ const ChatBox = ({ messages, setMessages, userType, userName, color }) => {
       bordered={false}
       style={{ width: 350 }}
     >
-      <MessageList messages={messages} userType={userType} />
+      <MessageList
+        messages={messages}
+        userType={userType}
+        background={background}
+      />
 
       <div className='input-chat'>
         <Row>

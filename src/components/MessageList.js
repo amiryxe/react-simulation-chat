@@ -1,9 +1,12 @@
 import React from 'react';
 import MessageItem from './MessageItem';
 
-const MessageList = ({ messages, userType }) => {
+const MessageList = ({ messages, userType, background }) => {
   return (
-    <div className='messages'>
+    <div
+      className='messages'
+      style={{ background: `url(${background.pattern}) ${background.color}` }}
+    >
       {messages.map((item) => {
         return (
           <MessageItem
