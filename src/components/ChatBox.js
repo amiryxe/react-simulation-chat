@@ -64,12 +64,10 @@ const ChatBox = ({
         background={background}
       />
 
-      <Emojis />
-
       <div className='input-chat'>
         <Row>
           <Col flex={2} style={{ textAlign: 'left' }}>
-            <Popover content='salam' title='Title' trigger='click'>
+            <Popover content={Emojis} title='Select Emoji' trigger='click'>
               <Tooltip placement='bottom' title='Emoji'>
                 <Button shape='circle' icon={<SmileOutlined />} />
               </Tooltip>
