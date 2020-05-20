@@ -20,7 +20,7 @@ const ModalSetting = () => {
 
   return (
     <div>
-      <Modal title='Setting' visible={true}>
+      <Modal title='Setting' visible={false}>
         <p>
           <label>
             Name:
