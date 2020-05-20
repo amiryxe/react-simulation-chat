@@ -48,16 +48,20 @@ const ChatBox = ({
 
   return (
     <Card
-      title={userName}
       extra={
-        <Avatar
-          style={{
-            color: `dark${color}`,
-            backgroundColor: `light${color}`,
-          }}
-        >
-          {userName[0].toUpperCase()}
-        </Avatar>
+        <div>
+          <Avatar
+            style={{
+              color: `dark${color}`,
+              backgroundColor: `light${color}`,
+              marginRight: '0.5rem',
+            }}
+          >
+            {userName[0].toUpperCase()}
+          </Avatar>
+
+          <span>{userName}</span>
+        </div>
       }
       bordered={false}
       style={{ width: 350 }}

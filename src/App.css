@@ -110,3 +110,9 @@ input[type='text'] {
 .ant-card-head-title {
   text-align: left;
 }
+
+.ant-card-extra {
+  float: left;
+  margin-right: auto;
+  margin-left: 0;
+}
