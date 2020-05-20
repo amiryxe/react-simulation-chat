@@ -6,15 +6,15 @@ const ModalSetting = () => {
     console.log('checked = ', checkedValues);
   }
 
-  const plainOptions = ['Apple', 'Pear', 'Orange'];
+  const plainOptions = ['Green', 'Cyan', 'Orange'];
   const options = [
-    { label: 'Apple', value: 'Apple' },
-    { label: 'Pear', value: 'Pear' },
+    { label: 'Green', value: 'Green' },
+    { label: 'Cyan', value: 'Cyan' },
     { label: 'Orange', value: 'Orange' },
   ];
   const optionsWithDisabled = [
-    { label: 'Apple', value: 'Apple' },
-    { label: 'Pear', value: 'Pear' },
+    { label: 'Green', value: 'Green' },
+    { label: 'Cyan', value: 'Cyan' },
     { label: 'Orange', value: 'Orange', disabled: false },
   ];
 
@@ -28,17 +28,18 @@ const ModalSetting = () => {
           </label>
         </p>
         <p>
+          Color:
           <div>
             <Checkbox.Group
               options={plainOptions}
-              defaultValue={['Apple']}
+              defaultValue={['Green']}
               onChange={onChange}
             />
             <br />
             <br />
             <Checkbox.Group
               options={options}
-              defaultValue={['Pear']}
+              defaultValue={['Cyan']}
               onChange={onChange}
             />
           </div>
