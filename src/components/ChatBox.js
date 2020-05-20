@@ -19,8 +19,6 @@ const ChatBox = ({
 
   const { visible, setVisible } = useContext(MainContext);
 
-  const [showSettingModal, setShowSettingModal] = useState(false);
-
   const sendMessageHandler = (e) => {
     e.preventDefault();
 
