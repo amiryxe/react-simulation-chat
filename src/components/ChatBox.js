@@ -1,10 +1,10 @@
 import React, { useState, useEffect, useContext } from 'react';
+import MainContext from '../context/mainContext';
 import MessageList from '../components/MessageList';
 import Emojis from '../components/Emojis';
 import { formatAMPM } from '../util/time';
 import { Button, Row, Col, Avatar, Card, Input, Tooltip, Popover } from 'antd';
 import { SmileOutlined, SettingOutlined } from '@ant-design/icons';
-import MainContext from '../context/mainContext';
 import ModalSetting from '../components/ModalSetting';
 
 const ChatBox = ({
@@ -17,7 +17,9 @@ const ChatBox = ({
 }) => {
   const [messageText, setMessageText] = useState('');
 
-  const { selectedEmoji } = useContext(MainContext);
+  const { visible, setVisible } = useContext(MainContext);
+
+  const [showSettingModal, setShowSettingModal] = useState(false);
 
   const sendMessageHandler = (e) => {
     e.preventDefault();
@@ -67,7 +69,10 @@ const ChatBox = ({
             style={{ float: 'right' }}
             shape='circle'
             icon={<SettingOutlined />}
+            onClick={() => setVisible(true)}
           />
+
+          {visible && <ModalSetting userName={userName} color={color} />}
         </div>
       }
       bordered={false}
@@ -100,8 +105,6 @@ const ChatBox = ({
           </Col>
         </Row>
       </div>
-
-      <ModalSetting />
     </Card>
   );
 };

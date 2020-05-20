@@ -55,6 +55,8 @@ const MainState = (props) => {
     },
   ]);
 
+  const [visible, setVisible] = useState(false);
+
   return (
     <MainContext.Provider
       value={{
@@ -63,6 +65,9 @@ const MainState = (props) => {
 
         selectedEmoji,
         setSelectedEmoji,
+
+        visible,
+        setVisible,
       }}
     >
       {props.children}
