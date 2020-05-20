@@ -5,6 +5,7 @@ import { formatAMPM } from '../util/time';
 import { Button, Row, Col, Avatar, Card, Input, Tooltip, Popover } from 'antd';
 import { SmileOutlined, SettingOutlined } from '@ant-design/icons';
 import MainContext from '../context/mainContext';
+import ModalSetting from '../components/ModalSetting';
 
 const ChatBox = ({
   messages,
@@ -99,6 +100,8 @@ const ChatBox = ({
           </Col>
         </Row>
       </div>
+
+      <ModalSetting />
     </Card>
   );
 };
