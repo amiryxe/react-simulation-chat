@@ -3,7 +3,7 @@ import MessageList from '../components/MessageList';
 import Emojis from '../components/Emojis';
 import { formatAMPM } from '../util/time';
 import { Button, Row, Col, Avatar, Card, Input, Tooltip, Popover } from 'antd';
-import { SmileOutlined } from '@ant-design/icons';
+import { SmileOutlined, SettingOutlined } from '@ant-design/icons';
 import MainContext from '../context/mainContext';
 
 const ChatBox = ({
@@ -61,6 +61,12 @@ const ChatBox = ({
           </Avatar>
 
           <span>{userName}</span>
+
+          <Button
+            style={{ float: 'right' }}
+            shape='circle'
+            icon={<SettingOutlined />}
+          />
         </div>
       }
       bordered={false}

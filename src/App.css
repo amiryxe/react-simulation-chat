@@ -113,6 +113,8 @@ input[type='text'] {
 
 .ant-card-extra {
   float: left;
-  margin-right: auto;
+  margin-right: 0;
   margin-left: 0;
+  width: 100%;
+  text-align: left;
 }
