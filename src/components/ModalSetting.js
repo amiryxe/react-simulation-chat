@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import { Modal, Input, Checkbox } from 'antd';
 import MainContext from '../context/mainContext';
 
-const ModalSetting = (props) => {
+const ModalSetting = ({ userType, userName, color }) => {
   function onChange(checkedValues) {
     console.log('checked = ', checkedValues);
   }
@@ -13,14 +13,13 @@ const ModalSetting = (props) => {
     { label: 'Cyan', value: 'Cyan' },
     { label: 'Orange', value: 'Orange' },
   ];
-  const optionsWithDisabled = [
-    { label: 'Green', value: 'Green' },
-    { label: 'Cyan', value: 'Cyan' },
-    { label: 'Orange', value: 'Orange', disabled: false },
-  ];
 
-  const { userName, color } = props;
-  const { visible, setVisible } = useContext(MainContext);
+  const {
+    visible,
+    setVisible,
+    setSenderUserName,
+    setReceiverUserName,
+  } = useContext(MainContext);
 
   const handleOk = (e) => {
     setVisible(false);
@@ -28,6 +27,10 @@ const ModalSetting = (props) => {
 
   const handleCancel = (e) => {
     setVisible(false);
+  };
+
+  const handleChangeUserName = (e) => {
+    console.log(userType);
   };
 
   return (
@@ -38,9 +41,14 @@ const ModalSetting = (props) => {
       onCancel={handleCancel}
     >
       <div style={{ marginBottom: '1rem' }}>
+        <p>{userType}</p>
         <label>
           Name:
-          <Input placeholder='Name of user' defaultValue={userName} />
+          <Input
+            placeholder='Name of user'
+            defaultValue={userName}
+            onChange={handleChangeUserName}
+          />
         </label>
       </div>
 

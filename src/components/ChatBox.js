@@ -69,8 +69,6 @@ const ChatBox = ({
             icon={<SettingOutlined />}
             onClick={() => setVisible(true)}
           />
-
-          {visible && <ModalSetting userName={userName} color={color} />}
         </div>
       }
       bordered={false}
@@ -81,6 +79,10 @@ const ChatBox = ({
         userType={userType}
         background={background}
       />
+
+      {visible && (
+        <ModalSetting userType={userType} userName={userName} color={color} />
+      )}
 
       <div className='input-chat'>
         <Row>

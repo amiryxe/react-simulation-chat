@@ -1,7 +1,9 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import ChatBox from '../components/ChatBox';
 import { Row, Col, Layout, Typography } from 'antd';
 import Pattern from '../assets/img/pattern.png';
+import MainContext from '../context/mainContext';
+
 const { Title } = Typography;
 
 const Chat = () => {
@@ -26,6 +28,8 @@ const Chat = () => {
     },
   ]);
 
+  const { senderUserName, receiverUserName } = useContext(MainContext);
+
   return (
     <div className='container'>
       <Layout style={{ padding: '3rem', background: 'transparent' }}>
@@ -36,7 +40,7 @@ const Chat = () => {
           <Col span={12} align='middle'>
             <ChatBox
               userType='send'
-              userName='Amir'
+              userName={senderUserName}
               color='Cyan'
               background={{ pattern: Pattern, color: '#777' }}
               messages={messages}
@@ -46,7 +50,7 @@ const Chat = () => {
           <Col span={12} align='middle'>
             <ChatBox
               userType='receive'
-              userName='Sara'
+              userName={receiverUserName}
               color='Green'
               background={{ pattern: Pattern, color: '#eee' }}
               messages={messages}

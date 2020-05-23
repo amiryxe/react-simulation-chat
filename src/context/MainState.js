@@ -57,6 +57,9 @@ const MainState = (props) => {
 
   const [visible, setVisible] = useState(false);
 
+  const [senderUserName, setSenderUserName] = useState('Amir');
+  const [receiverUserName, setReceiverUserName] = useState('Sara');
+
   return (
     <MainContext.Provider
       value={{
@@ -68,6 +71,12 @@ const MainState = (props) => {
 
         visible,
         setVisible,
+
+        senderUserName,
+        setSenderUserName,
+
+        receiverUserName,
+        setReceiverUserName,
       }}
     >
       {props.children}
