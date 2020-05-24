@@ -33,7 +33,7 @@ const Chat = () => {
   return (
     <div className='container'>
       <Layout style={{ padding: '3rem', background: 'transparent' }}>
-        <Title style={{ margin: '2rem 0', textAlign: 'center' }}>
+        <Title style={{ margin: '2rem 0', textAlign: 'center', color: '#fff' }}>
           React Simulation Chat
         </Title>
         <Row>
