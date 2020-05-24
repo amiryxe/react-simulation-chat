@@ -55,8 +55,6 @@ const MainState = (props) => {
     },
   ]);
 
-  const [visible, setVisible] = useState(false);
-
   const [senderUserName, setSenderUserName] = useState('Amir');
   const [receiverUserName, setReceiverUserName] = useState('Sara');
 
@@ -68,9 +66,6 @@ const MainState = (props) => {
 
         selectedEmoji,
         setSelectedEmoji,
-
-        visible,
-        setVisible,
 
         senderUserName,
         setSenderUserName,

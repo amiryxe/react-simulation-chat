@@ -1,5 +1,4 @@
-import React, { useState, useEffect, useContext } from 'react';
-import MainContext from '../context/mainContext';
+import React, { useState, useEffect } from 'react';
 import MessageList from '../components/MessageList';
 import Emojis from '../components/Emojis';
 import { formatAMPM } from '../util/time';
@@ -17,7 +16,7 @@ const ChatBox = ({
 }) => {
   const [messageText, setMessageText] = useState('');
 
-  const { visible, setVisible } = useContext(MainContext);
+  const [visible, setVisible] = useState(false);
 
   const sendMessageHandler = (e) => {
     e.preventDefault();
@@ -81,7 +80,13 @@ const ChatBox = ({
       />
 
       {visible && (
-        <ModalSetting userType={userType} userName={userName} color={color} />
+        <ModalSetting
+          userType={userType}
+          userName={userName}
+          color={color}
+          visible={visible}
+          setVisible={setVisible}
+        />
       )}
 
       <div className='input-chat'>

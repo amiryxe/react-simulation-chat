@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import { Modal, Input, Checkbox } from 'antd';
 import MainContext from '../context/mainContext';
 
-const ModalSetting = ({ userType, userName, color }) => {
+const ModalSetting = ({ userType, userName, color, visible, setVisible }) => {
   function onChange(checkedValues) {
     console.log('checked = ', checkedValues);
   }
@@ -14,12 +14,7 @@ const ModalSetting = ({ userType, userName, color }) => {
     { label: 'Orange', value: 'Orange' },
   ];
 
-  const {
-    visible,
-    setVisible,
-    setSenderUserName,
-    setReceiverUserName,
-  } = useContext(MainContext);
+  const { setSenderUserName, setReceiverUserName } = useContext(MainContext);
 
   const handleOk = (e) => {
     setVisible(false);
