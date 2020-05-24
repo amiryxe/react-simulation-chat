@@ -25,7 +25,7 @@ const ModalSetting = ({ userType, userName, color, visible, setVisible }) => {
   };
 
   const handleChangeUserName = (e) => {
-    console.log(userType);
+    // console.log(userType);
   };
 
   return (
@@ -36,7 +36,6 @@ const ModalSetting = ({ userType, userName, color, visible, setVisible }) => {
       onCancel={handleCancel}
     >
       <div style={{ marginBottom: '1rem' }}>
-        <p>{userType}</p>
         <label>
           Name:
           <Input
@@ -53,13 +52,6 @@ const ModalSetting = ({ userType, userName, color, visible, setVisible }) => {
           <Checkbox.Group
             options={plainOptions}
             defaultValue={['Green']}
-            onChange={onChange}
-          />
-          <br />
-          <br />
-          <Checkbox.Group
-            options={options}
-            defaultValue={['Cyan']}
             onChange={onChange}
           />
         </div>
