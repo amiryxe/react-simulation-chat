@@ -1,6 +1,7 @@
 import React from 'react';
 import Chat from './pages/Chat';
 import MainState from './context/MainState';
+import 'vazir-font/dist/font-face.css';
 import './App.css';
 
 function App() {
