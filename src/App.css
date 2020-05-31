@@ -129,4 +129,5 @@ input[type='text'] {
   left: 0;
   width: 60px;
   font-style: italic;
+  display: none;
 }

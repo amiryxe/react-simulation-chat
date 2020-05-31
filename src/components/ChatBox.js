@@ -62,7 +62,9 @@ const ChatBox = ({
 
           <span style={{ position: 'relative' }}>
             {userName}
-            <p className='is-typing'>is typing...</p>
+            <p className='is-typing' style={{ display: 'block' }}>
+              is typing...
+            </p>
           </span>
 
           <Button
