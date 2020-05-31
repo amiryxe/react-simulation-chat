@@ -60,7 +60,10 @@ const ChatBox = ({
             {userName[0].toUpperCase()}
           </Avatar>
 
-          <span>{userName}</span>
+          <span style={{ position: 'relative' }}>
+            {userName}
+            <p className='is-typing'>is typing...</p>
+          </span>
 
           <Button
             style={{ float: 'right' }}
