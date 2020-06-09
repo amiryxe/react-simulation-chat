@@ -1,20 +1,17 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import { Modal, Input, Checkbox } from 'antd';
-import MainContext from '../context/mainContext';
 
-const ModalSetting = ({ userType, userName, color, visible, setVisible }) => {
+const ModalSetting = ({ userName, visible, setVisible }) => {
   function onChange(checkedValues) {
     console.log('checked = ', checkedValues);
   }
 
   const plainOptions = ['Green', 'Cyan', 'Orange'];
-  const options = [
-    { label: 'Green', value: 'Green' },
-    { label: 'Cyan', value: 'Cyan' },
-    { label: 'Orange', value: 'Orange' },
-  ];
-
-  const { setSenderUserName, setReceiverUserName } = useContext(MainContext);
+  // const options = [
+  //   { label: 'Green', value: 'Green' },
+  //   { label: 'Cyan', value: 'Cyan' },
+  //   { label: 'Orange', value: 'Orange' },
+  // ];
 
   const handleOk = (e) => {
     setVisible(false);
