@@ -1,19 +1,25 @@
-import React from 'react';
-import { Modal, Input, Checkbox } from 'antd';
+import React, { useContext, useState } from "react";
+import MainContext from "../context/mainContext";
+import { Modal, Input, Checkbox } from "antd";
 
-const ModalSetting = ({ userName, visible, setVisible }) => {
+const ModalSetting = ({ userName, visible, setVisible, userType }) => {
   function onChange(checkedValues) {
-    console.log('checked = ', checkedValues);
+    console.log("checked = ", checkedValues);
   }
 
-  const plainOptions = ['Green', 'Cyan', 'Orange'];
-  // const options = [
-  //   { label: 'Green', value: 'Green' },
-  //   { label: 'Cyan', value: 'Cyan' },
-  //   { label: 'Orange', value: 'Orange' },
-  // ];
+  const { setSenderUserName, setReceiverUserName } = useContext(MainContext);
+
+  const [userNameText, setUserNameText] = useState(userName);
+
+  const plainOptions = ["Green", "Cyan", "Orange"];
 
   const handleOk = (e) => {
+    if (userType === "send") {
+      setSenderUserName(userNameText);
+    } else if (userType === "receive") {
+      setReceiverUserName(userNameText);
+    }
+
     setVisible(false);
   };
 
@@ -22,22 +28,22 @@ const ModalSetting = ({ userName, visible, setVisible }) => {
   };
 
   const handleChangeUserName = (e) => {
-    // console.log(userType);
+    setUserNameText(e.target.value);
   };
 
   return (
     <Modal
-      title='Setting'
+      title="Setting"
       visible={visible}
       onOk={handleOk}
       onCancel={handleCancel}
     >
-      <div style={{ marginBottom: '1rem' }}>
+      <div style={{ marginBottom: "1rem" }}>
         <label>
           Name:
           <Input
-            placeholder='Name of user'
-            defaultValue={userName}
+            placeholder="Name of user"
+            defaultValue={userNameText}
             onChange={handleChangeUserName}
           />
         </label>
@@ -48,7 +54,7 @@ const ModalSetting = ({ userName, visible, setVisible }) => {
         <div>
           <Checkbox.Group
             options={plainOptions}
-            defaultValue={['Green']}
+            defaultValue={["Green"]}
             onChange={onChange}
           />
         </div>
