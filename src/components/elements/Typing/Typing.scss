@@ -1,0 +1,38 @@
+$bg_typing: #fff;
+$text-color: #00b3ca;
+$text-length: 4;
+$animation-time: .7s;
+
+// Basic style
+.typing-wrapper {
+  font-family: 'Inconsolata', Consolas, monospace;
+	font-size: 1em;
+	color: $text-color;
+    width: 120px;
+    margin: 0;
+    font-size: 12px;
+    color: rgb(72, 152, 202);
+    position: absolute;
+    bottom: -15px;
+    left: 0;
+}
+// Typing style
+.typing {
+  position: relative;
+	&::after {
+    content: " ";
+    position: absolute;
+    right: 0;
+    width: 100%;
+    background: $bg_typing;
+    animation: typing $animation-time steps($text-length) infinite,
+      caret 1s infinite;
+  }
+}
+// Animation
+@keyframes typing {
+	to { width: 0 }
+}
+@keyframes caret {
+	50% { color: transparent }
+}
