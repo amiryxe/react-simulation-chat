@@ -1,10 +1,11 @@
-import React, { useState, useEffect } from 'react';
-import MessageList from '../components/MessageList';
-import Emojis from '../components/Emojis';
-import { formatAMPM } from '../util/time';
-import { Button, Row, Col, Avatar, Card, Input, Tooltip, Popover } from 'antd';
-import { SmileOutlined, SettingOutlined } from '@ant-design/icons';
-import ModalSetting from '../components/ModalSetting';
+import React, { useState, useEffect } from "react";
+import MessageList from "../components/MessageList";
+import Emojis from "../components/Emojis";
+import { formatAMPM } from "../util/time";
+import { Button, Row, Col, Avatar, Card, Input, Tooltip, Popover } from "antd";
+import { SmileOutlined, SettingOutlined } from "@ant-design/icons";
+import ModalSetting from "../components/ModalSetting";
+import Typing from "../components/elements/Typing";
 
 const ChatBox = ({
   messages,
@@ -14,7 +15,7 @@ const ChatBox = ({
   color,
   background,
 }) => {
-  const [messageText, setMessageText] = useState('');
+  const [messageText, setMessageText] = useState("");
 
   const [visible, setVisible] = useState(false);
 
@@ -26,14 +27,14 @@ const ChatBox = ({
         ...messages,
         {
           id: Math.random(),
-          type: userType === 'send' ? 'send' : 'receive',
+          type: userType === "send" ? "send" : "receive",
           text: messageText,
           time: formatAMPM(new Date()),
         },
       ]);
     }
 
-    setMessageText('');
+    setMessageText("");
   };
 
   const messageChangeHandler = (e) => {
@@ -41,7 +42,7 @@ const ChatBox = ({
   };
 
   useEffect(() => {
-    document.querySelectorAll('.messages').forEach((item) => {
+    document.querySelectorAll(".messages").forEach((item) => {
       item.scrollTop = item.scrollHeight;
     });
   }, [messages]);
@@ -54,22 +55,20 @@ const ChatBox = ({
             style={{
               color: `dark${color}`,
               backgroundColor: `light${color}`,
-              marginRight: '0.5rem',
+              marginRight: "0.5rem",
             }}
           >
             {userName[0].toUpperCase()}
           </Avatar>
 
-          <span style={{ position: 'relative' }}>
+          <span style={{ position: "relative" }}>
             {userName}
-            <p className='is-typing' style={{ display: 'block' }}>
-              is typing...
-            </p>
+            <Typing />
           </span>
 
           <Button
-            style={{ float: 'right' }}
-            shape='circle'
+            style={{ float: "right" }}
+            shape="circle"
             icon={<SettingOutlined />}
             onClick={() => setVisible(true)}
           />
@@ -94,12 +93,12 @@ const ChatBox = ({
         />
       )}
 
-      <div className='input-chat'>
+      <div className="input-chat">
         <Row>
-          <Col flex={2} style={{ textAlign: 'left' }}>
-            <Popover content={Emojis} title='Select Emoji' trigger='click'>
-              <Tooltip placement='bottom' title='Emoji'>
-                <Button shape='circle' icon={<SmileOutlined />} />
+          <Col flex={2} style={{ textAlign: "left" }}>
+            <Popover content={Emojis} title="Select Emoji" trigger="click">
+              <Tooltip placement="bottom" title="Emoji">
+                <Button shape="circle" icon={<SmileOutlined />} />
               </Tooltip>
             </Popover>
           </Col>
@@ -109,7 +108,7 @@ const ChatBox = ({
               <Input
                 onChange={messageChangeHandler}
                 value={messageText}
-                placeholder='Type a message...'
+                placeholder="Type a message..."
               />
             </form>
           </Col>

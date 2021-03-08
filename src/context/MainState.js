@@ -1,62 +1,79 @@
-import React, { useState } from 'react';
-import MainContext from './mainContext';
+import React, { useState } from "react";
+import MainContext from "./mainContext";
 
 const MainState = (props) => {
-  const [selectedEmoji, setSelectedEmoji] = useState('');
+  const [selectedEmoji, setSelectedEmoji] = useState("");
 
   const [emojiList, setEmojiList] = useState([
     {
       id: 1,
-      emoji: '😀',
+      emoji: "😀",
     },
     {
       id: 2,
-      emoji: '😁',
+      emoji: "😁",
     },
     {
       id: 3,
-      emoji: '😂',
+      emoji: "😂",
     },
     {
       id: 4,
-      emoji: '😄',
+      emoji: "😄",
     },
     {
       id: 5,
-      emoji: '😍',
+      emoji: "😍",
     },
     {
       id: 6,
-      emoji: '🙄',
+      emoji: "🙄",
     },
     {
       id: 7,
-      emoji: '😊',
+      emoji: "😊",
     },
     {
       id: 8,
-      emoji: '😫',
+      emoji: "😫",
     },
     {
       id: 9,
-      emoji: '😭',
+      emoji: "😭",
     },
     {
       id: 10,
-      emoji: '🤢',
+      emoji: "🤢",
     },
     {
       id: 11,
-      emoji: '🌹',
+      emoji: "🌹",
     },
     {
       id: 12,
-      emoji: '❤',
+      emoji: "❤",
     },
   ]);
 
-  const [senderUserName, setSenderUserName] = useState('Amir');
-  const [receiverUserName, setReceiverUserName] = useState('Sara');
+  const [senderUserName, setSenderUserName] = useState("Amir");
+  const [receiverUserName, setReceiverUserName] = useState("Sara");
+
+  var i = 0;
+  var txt = "is typing...";
+  var speed = 50;
+
+  let text = "";
+  function typeWriter() {
+    if (i < txt.length) {
+      text += txt.charAt(i);
+      i++;
+      setTimeout(typeWriter, speed);
+    }
+  }
+
+  typeWriter();
+
+  console.log(text);
 
   return (
     <MainContext.Provider
