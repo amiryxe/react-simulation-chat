@@ -19,6 +19,8 @@ const ChatBox = ({
 
   const [visible, setVisible] = useState(false);
 
+  const [showTyping, setShowTyping] = useState(false);
+
   const sendMessageHandler = (e) => {
     e.preventDefault();
 
@@ -37,8 +39,19 @@ const ChatBox = ({
     setMessageText("");
   };
 
+  let isTypingTimer;
+
+  const handleKeyUp = (e) => {
+    isTypingTimer = setTimeout(() => {
+      setShowTyping(false);
+    }, 1000);
+  };
+
   const messageChangeHandler = (e) => {
     setMessageText(e.target.value);
+    setShowTyping(true);
+
+    clearTimeout(isTypingTimer);
   };
 
   useEffect(() => {
@@ -63,7 +76,7 @@ const ChatBox = ({
 
           <span style={{ position: "relative" }}>
             {userName}
-            <Typing />
+            <Typing visible={showTyping} />
           </span>
 
           <Button
@@ -107,6 +120,7 @@ const ChatBox = ({
             <form onSubmit={sendMessageHandler}>
               <Input
                 onChange={messageChangeHandler}
+                onKeyUp={handleKeyUp}
                 value={messageText}
                 placeholder="Type a message..."
               />
