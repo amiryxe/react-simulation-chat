@@ -50,9 +50,7 @@ const ChatBox = ({
   const messageChangeHandler = (e) => {
     setMessageText(e.target.value);
 
-    if (userType == "send") {
-      setShowTyping(true);
-    }
+    setShowTyping(true);
 
     clearTimeout(isTypingTimer);
   };
