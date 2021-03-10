@@ -58,23 +58,6 @@ const MainState = (props) => {
   const [senderUserName, setSenderUserName] = useState("Amir");
   const [receiverUserName, setReceiverUserName] = useState("Sara");
 
-  var i = 0;
-  var txt = "is typing...";
-  var speed = 50;
-
-  let text = "";
-  function typeWriter() {
-    if (i < txt.length) {
-      text += txt.charAt(i);
-      i++;
-      setTimeout(typeWriter, speed);
-    }
-  }
-
-  typeWriter();
-
-  console.log(text);
-
   return (
     <MainContext.Provider
       value={{

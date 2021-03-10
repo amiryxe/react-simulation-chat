@@ -49,7 +49,10 @@ const ChatBox = ({
 
   const messageChangeHandler = (e) => {
     setMessageText(e.target.value);
-    setShowTyping(true);
+
+    if (userType == "send") {
+      setShowTyping(true);
+    }
 
     clearTimeout(isTypingTimer);
   };
@@ -119,7 +122,7 @@ const ChatBox = ({
           <Col flex={10}>
             <form onSubmit={sendMessageHandler}>
               <Input
-                onChange={messageChangeHandler}
+                onChange={(userType) => messageChangeHandler(userType)}
                 onKeyUp={handleKeyUp}
                 value={messageText}
                 placeholder="Type a message..."
