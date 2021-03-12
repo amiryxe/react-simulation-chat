@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import MessageList from "../components/MessageList";
 import Emojis from "../components/Emojis";
 import { formatAMPM } from "../util/time";
@@ -6,6 +6,7 @@ import { Button, Row, Col, Avatar, Card, Input, Tooltip, Popover } from "antd";
 import { SmileOutlined, SettingOutlined } from "@ant-design/icons";
 import ModalSetting from "../components/ModalSetting";
 import Typing from "../components/elements/Typing";
+import MainContext from "../context/mainContext";
 
 const ChatBox = ({
   messages,
@@ -15,28 +16,37 @@ const ChatBox = ({
   color,
   background,
 }) => {
-  const [messageText, setMessageText] = useState("");
-
   const [visible, setVisible] = useState(false);
 
   const [showTyping, setShowTyping] = useState(false);
 
+  const [currentMessage, setCurrentMessage] = useState("");
+
+  const {
+    selectedEmoji,
+    setSelectedEmoji,
+    messageText,
+    setMessageText,
+  } = useContext(MainContext);
+
   const sendMessageHandler = (e) => {
     e.preventDefault();
 
-    if (messageText) {
+    if (currentMessage) {
       setMessages([
         ...messages,
         {
           id: Math.random(),
           type: userType === "send" ? "send" : "receive",
-          text: messageText,
+          text: currentMessage,
           time: formatAMPM(new Date()),
         },
       ]);
+
+      setSelectedEmoji("");
     }
 
-    setMessageText("");
+    setCurrentMessage("");
   };
 
   let isTypingTimer;
@@ -48,7 +58,7 @@ const ChatBox = ({
   };
 
   const messageChangeHandler = (e) => {
-    setMessageText(e.target.value);
+    setCurrentMessage(e.target.value);
 
     setShowTyping(true);
 
@@ -122,7 +132,7 @@ const ChatBox = ({
               <Input
                 onChange={(userType) => messageChangeHandler(userType)}
                 onKeyUp={handleKeyUp}
-                value={messageText}
+                value={currentMessage}
                 placeholder="Type a message..."
               />
             </form>

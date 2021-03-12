@@ -51,12 +51,13 @@ const MainState = (props) => {
     },
     {
       id: 12,
-      emoji: "❤",
+      emoji: "❤️",
     },
   ]);
 
   const [senderUserName, setSenderUserName] = useState("Amir");
   const [receiverUserName, setReceiverUserName] = useState("Sara");
+  const [messageText, setMessageText] = useState("");
 
   return (
     <MainContext.Provider
@@ -69,6 +70,9 @@ const MainState = (props) => {
 
         senderUserName,
         setSenderUserName,
+
+        messageText,
+        setMessageText,
 
         receiverUserName,
         setReceiverUserName,
