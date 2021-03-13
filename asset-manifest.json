@@ -1,27 +1,27 @@
 {
   "files": {
-    "main.css": "/react-simulation-chat/static/css/main.71d4ecd6.chunk.css",
-    "main.js": "/react-simulation-chat/static/js/main.383be43c.chunk.js",
-    "main.js.map": "/react-simulation-chat/static/js/main.383be43c.chunk.js.map",
+    "main.css": "/react-simulation-chat/static/css/main.a40282ee.chunk.css",
+    "main.js": "/react-simulation-chat/static/js/main.252095ec.chunk.js",
+    "main.js.map": "/react-simulation-chat/static/js/main.252095ec.chunk.js.map",
     "runtime-main.js": "/react-simulation-chat/static/js/runtime-main.37ac8f95.js",
     "runtime-main.js.map": "/react-simulation-chat/static/js/runtime-main.37ac8f95.js.map",
     "static/css/2.fe56744f.chunk.css": "/react-simulation-chat/static/css/2.fe56744f.chunk.css",
-    "static/js/2.ca9573fc.chunk.js": "/react-simulation-chat/static/js/2.ca9573fc.chunk.js",
-    "static/js/2.ca9573fc.chunk.js.map": "/react-simulation-chat/static/js/2.ca9573fc.chunk.js.map",
+    "static/js/2.4dcc265b.chunk.js": "/react-simulation-chat/static/js/2.4dcc265b.chunk.js",
+    "static/js/2.4dcc265b.chunk.js.map": "/react-simulation-chat/static/js/2.4dcc265b.chunk.js.map",
     "index.html": "/react-simulation-chat/index.html",
-    "precache-manifest.8e0cf4f4a02e1ab58745ea68659a89bc.js": "/react-simulation-chat/precache-manifest.8e0cf4f4a02e1ab58745ea68659a89bc.js",
+    "precache-manifest.8c78587cd40c72296077aafcf0ec3fb6.js": "/react-simulation-chat/precache-manifest.8c78587cd40c72296077aafcf0ec3fb6.js",
     "service-worker.js": "/react-simulation-chat/service-worker.js",
     "static/css/2.fe56744f.chunk.css.map": "/react-simulation-chat/static/css/2.fe56744f.chunk.css.map",
-    "static/css/main.71d4ecd6.chunk.css.map": "/react-simulation-chat/static/css/main.71d4ecd6.chunk.css.map",
-    "static/js/2.ca9573fc.chunk.js.LICENSE.txt": "/react-simulation-chat/static/js/2.ca9573fc.chunk.js.LICENSE.txt",
+    "static/css/main.a40282ee.chunk.css.map": "/react-simulation-chat/static/css/main.a40282ee.chunk.css.map",
+    "static/js/2.4dcc265b.chunk.js.LICENSE.txt": "/react-simulation-chat/static/js/2.4dcc265b.chunk.js.LICENSE.txt",
     "static/media/font-face.css": "/react-simulation-chat/static/media/Vazir.fd58729f.eot",
     "static/media/index.css": "/react-simulation-chat/static/media/montserrat-latin-900italic.a8ec4957.woff"
   },
   "entrypoints": [
     "static/js/runtime-main.37ac8f95.js",
     "static/css/2.fe56744f.chunk.css",
-    "static/js/2.ca9573fc.chunk.js",
-    "static/css/main.71d4ecd6.chunk.css",
-    "static/js/main.383be43c.chunk.js"
+    "static/js/2.4dcc265b.chunk.js",
+    "static/css/main.a40282ee.chunk.css",
+    "static/js/main.252095ec.chunk.js"
   ]
 }
