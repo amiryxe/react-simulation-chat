@@ -1,18 +1,23 @@
 import React, { useContext, useState } from "react";
 import MainContext from "../context/mainContext";
 import { Modal, Input, Checkbox } from "antd";
-import { ChromePicker } from "react-color";
+import { SketchPicker } from "react-color";
 
 const ModalSetting = ({ userName, visible, setVisible, userType }) => {
   function onChange(checkedValues) {
     console.log("checked = ", checkedValues);
   }
 
-  const { setSenderUserName, setReceiverUserName } = useContext(MainContext);
+  const {
+    setSenderUserName,
+    setReceiverUserName,
+    setSenderBgColor,
+    setReceiverBgColor,
+  } = useContext(MainContext);
 
   const [userNameText, setUserNameText] = useState(userName);
 
-  const [bgColor, setBgColor] = useState(userName);
+  const [bgColor, setBgColor] = useState("");
 
   const plainOptions = ["Green", "Cyan", "Orange"];
 
@@ -23,8 +28,10 @@ const ModalSetting = ({ userName, visible, setVisible, userType }) => {
   const handleOk = (e) => {
     if (userType === "send") {
       setSenderUserName(userNameText);
+      setSenderBgColor(bgColor);
     } else if (userType === "receive") {
       setReceiverUserName(userNameText);
+      setReceiverBgColor(bgColor);
     }
 
     setVisible(false);
@@ -67,7 +74,7 @@ const ModalSetting = ({ userName, visible, setVisible, userType }) => {
         </div>
       </div>
 
-      <ChromePicker color={bgColor} onChangeComplete={handleChangeComplete} />
+      <SketchPicker color={bgColor} onChange={handleChangeComplete} />
     </Modal>
   );
 };

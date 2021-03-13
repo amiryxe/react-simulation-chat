@@ -58,6 +58,8 @@ const MainState = (props) => {
   const [senderUserName, setSenderUserName] = useState("Amir");
   const [receiverUserName, setReceiverUserName] = useState("Sara");
   const [messageText, setMessageText] = useState("");
+  const [senderBgColor, setSenderBgColor] = useState("#777");
+  const [receiverBgColor, setReceiverBgColor] = useState("#eee");
 
   return (
     <MainContext.Provider
@@ -76,6 +78,12 @@ const MainState = (props) => {
 
         receiverUserName,
         setReceiverUserName,
+
+        senderBgColor,
+        setSenderBgColor,
+
+        receiverBgColor,
+        setReceiverBgColor,
       }}
     >
       {props.children}

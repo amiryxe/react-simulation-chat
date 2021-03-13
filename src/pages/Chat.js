@@ -28,7 +28,12 @@ const Chat = () => {
     },
   ]);
 
-  const { senderUserName, receiverUserName } = useContext(MainContext);
+  const {
+    senderUserName,
+    receiverUserName,
+    senderBgColor,
+    receiverBgColor,
+  } = useContext(MainContext);
 
   return (
     <div className="container">
@@ -42,7 +47,7 @@ const Chat = () => {
               userType="send"
               userName={senderUserName}
               color="Cyan"
-              background={{ pattern: Pattern, color: "#777" }}
+              background={{ pattern: Pattern, color: senderBgColor }}
               messages={messages}
               setMessages={setMessages}
             />
@@ -52,7 +57,7 @@ const Chat = () => {
               userType="receive"
               userName={receiverUserName}
               color="Green"
-              background={{ pattern: Pattern, color: "#eee" }}
+              background={{ pattern: Pattern, color: receiverBgColor }}
               messages={messages}
               setMessages={setMessages}
             />
