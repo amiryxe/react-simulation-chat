@@ -10,6 +10,7 @@
     "antd": "^4.2.3",
     "node-sass": "^4.14.1",
     "react": "^16.13.1",
+    "react-color": "^2.19.3",
     "react-dom": "^16.13.1",
     "react-scripts": "3.4.1",
     "typeface-montserrat": "0.0.75",

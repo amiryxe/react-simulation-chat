@@ -1,6 +1,7 @@
 import React, { useContext, useState } from "react";
 import MainContext from "../context/mainContext";
 import { Modal, Input, Checkbox } from "antd";
+import { ChromePicker } from "react-color";
 
 const ModalSetting = ({ userName, visible, setVisible, userType }) => {
   function onChange(checkedValues) {
@@ -11,7 +12,13 @@ const ModalSetting = ({ userName, visible, setVisible, userType }) => {
 
   const [userNameText, setUserNameText] = useState(userName);
 
+  const [bgColor, setBgColor] = useState(userName);
+
   const plainOptions = ["Green", "Cyan", "Orange"];
+
+  const handleChangeComplete = (color) => {
+    setBgColor(color.hex);
+  };
 
   const handleOk = (e) => {
     if (userType === "send") {
@@ -59,6 +66,8 @@ const ModalSetting = ({ userName, visible, setVisible, userType }) => {
           />
         </div>
       </div>
+
+      <ChromePicker color={bgColor} onChangeComplete={handleChangeComplete} />
     </Modal>
   );
 };
