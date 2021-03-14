@@ -87,6 +87,7 @@ const ModalSetting = ({ userName, visible, setVisible, userType }) => {
               width: "3rem",
               height: "1.3rem",
               display: "block",
+              borderRadius: 3,
               background: bgColor,
             }}
           ></span>
