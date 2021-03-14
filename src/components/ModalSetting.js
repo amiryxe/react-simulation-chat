@@ -1,25 +1,29 @@
 import React, { useContext, useState } from "react";
 import MainContext from "../context/mainContext";
-import { Modal, Input, Checkbox } from "antd";
+import { Modal, Input, Button } from "antd";
 import { SketchPicker } from "react-color";
 
 const ModalSetting = ({ userName, visible, setVisible, userType }) => {
-  function onChange(checkedValues) {
-    console.log("checked = ", checkedValues);
-  }
-
   const {
     setSenderUserName,
     setReceiverUserName,
     setSenderBgColor,
     setReceiverBgColor,
+    senderBgColor,
+    receiverBgColor,
   } = useContext(MainContext);
 
   const [userNameText, setUserNameText] = useState(userName);
 
-  const [bgColor, setBgColor] = useState("");
+  const [bgColor, setBgColor] = useState(
+    userType == "send" ? senderBgColor : receiverBgColor
+  );
 
-  const plainOptions = ["Green", "Cyan", "Orange"];
+  const [showColorPicker, setShowColorPicker] = useState(false);
+
+  const HandleShowColorPicker = () => {
+    showColorPicker ? setShowColorPicker(false) : setShowColorPicker(true);
+  };
 
   const handleChangeComplete = (color) => {
     setBgColor(color.hex);
@@ -45,6 +49,18 @@ const ModalSetting = ({ userName, visible, setVisible, userType }) => {
     setUserNameText(e.target.value);
   };
 
+  const popover = {
+    position: "absolute",
+    zIndex: "2",
+  };
+  const cover = {
+    position: "fixed",
+    top: "0px",
+    right: "0px",
+    bottom: "0px",
+    left: "0px",
+  };
+
   return (
     <Modal
       title="Setting"
@@ -64,17 +80,24 @@ const ModalSetting = ({ userName, visible, setVisible, userType }) => {
       </div>
 
       <div>
-        Color:
-        <div>
-          <Checkbox.Group
-            options={plainOptions}
-            defaultValue={["Green"]}
-            onChange={onChange}
-          />
-        </div>
+        Backgroud Color:
+        <Button style={{ marginLeft: "1rem" }} onClick={HandleShowColorPicker}>
+          <span
+            style={{
+              width: "3rem",
+              height: "1.3rem",
+              display: "block",
+              background: bgColor,
+            }}
+          ></span>
+        </Button>
+        {showColorPicker && (
+          <div style={popover}>
+            <div style={cover} onClick={() => setShowColorPicker(false)} />
+            <SketchPicker color={bgColor} onChange={handleChangeComplete} />
+          </div>
+        )}
       </div>
-
-      <SketchPicker color={bgColor} onChange={handleChangeComplete} />
     </Modal>
   );
 };
