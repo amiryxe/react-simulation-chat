@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext } from "react";
+import React, { useState, useEffect, useContext, useRef } from "react";
 import MessageList from "../components/MessageList";
 import Emojis from "../components/Emojis";
 import { formatAMPM } from "../util/time";
@@ -21,6 +21,8 @@ const ChatBox = ({
   const [showTyping, setShowTyping] = useState(false);
 
   const [currentMessage, setCurrentMessage] = useState("");
+
+  const inputRef = useRef(null);
 
   const {
     selectedEmoji,
@@ -70,6 +72,10 @@ const ChatBox = ({
       item.scrollTop = item.scrollHeight;
     });
   }, [messages]);
+
+  useEffect(() => {
+    userType === "send" && inputRef.current.focus();
+  }, []);
 
   return (
     <Card
@@ -134,6 +140,7 @@ const ChatBox = ({
                 onKeyUp={handleKeyUp}
                 value={currentMessage}
                 placeholder="Type a message..."
+                ref={inputRef}
               />
             </form>
           </Col>
