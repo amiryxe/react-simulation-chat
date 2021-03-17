@@ -42,7 +42,7 @@ const Chat = () => {
           React Simulation Chat
         </Title>
         <Row>
-          <Col md={1} lg={8} xl={12} align="middle">
+          <Col md={24} lg={12} align="middle">
             <ChatBox
               userType="send"
               userName={senderUserName}
@@ -52,7 +52,7 @@ const Chat = () => {
               setMessages={setMessages}
             />
           </Col>
-          <Col md={1} lg={8} xl={12} align="middle">
+          <Col md={24} lg={12} align="middle">
             <ChatBox
               userType="receive"
               userName={receiverUserName}
