@@ -1,4 +1,4 @@
-@import '~antd/dist/antd.css';
+@import "~antd/dist/antd.css";
 
 body {
   background-image: linear-gradient(120deg, #a8f9ff 0%, #66a6ff 100%);
@@ -14,7 +14,7 @@ body {
   padding: 0;
 }
 
-input[type='text'] {
+input[type="text"] {
   border-radius: 20px;
 }
 
@@ -48,6 +48,7 @@ input[type='text'] {
   position: relative;
   clear: both;
   margin-bottom: 3px;
+  text-align: left;
   box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.03);
 }
 
@@ -64,7 +65,7 @@ input[type='text'] {
 }
 
 .message-receive:after {
-  content: '';
+  content: "";
   position: absolute;
   left: 0;
   top: 0;
@@ -80,7 +81,7 @@ input[type='text'] {
 }
 
 .message-send:after {
-  content: '';
+  content: "";
   position: absolute;
   right: 0;
   top: 0;
