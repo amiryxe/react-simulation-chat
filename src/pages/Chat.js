@@ -4,6 +4,8 @@ import { Row, Col, Layout, Typography } from "antd";
 import Pattern from "../assets/img/pattern.png";
 import MainContext from "../context/mainContext";
 
+import "./Chat.scss";
+
 const { Title } = Typography;
 
 const Chat = () => {
