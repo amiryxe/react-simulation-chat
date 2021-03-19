@@ -40,44 +40,44 @@ input[type="text"] {
   background: #cfeeb8;
   float: right;
   border-top-right-radius: 0;
+
+  &:after {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 0;
+    height: 0;
+    border: 10px solid transparent;
+    border-right-color: #cfeeb8;
+    border-left: 0;
+    border-bottom: 0;
+    margin-top: 0;
+    margin-right: -10px;
+    transform: rotate(180deg);
+  }
 }
 
 .message-receive {
   background: white;
   float: left;
   border-top-left-radius: 0;
-}
 
-.message-receive:after {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 0;
-  height: 0;
-  border: 10px solid transparent;
-  border-right-color: white;
-  border-left: 0;
-  border-bottom: 0;
-  margin-top: 0;
-  margin-left: -10px;
-  transform: rotate(-90deg);
-}
-
-.message-send:after {
-  content: "";
-  position: absolute;
-  right: 0;
-  top: 0;
-  width: 0;
-  height: 0;
-  border: 10px solid transparent;
-  border-right-color: #cfeeb8;
-  border-left: 0;
-  border-bottom: 0;
-  margin-top: 0;
-  margin-right: -10px;
-  transform: rotate(180deg);
+  &:after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 0;
+    height: 0;
+    border: 10px solid transparent;
+    border-right-color: white;
+    border-left: 0;
+    border-bottom: 0;
+    margin-top: 0;
+    margin-left: -10px;
+    transform: rotate(-90deg);
+  }
 }
 
 .message-time {
