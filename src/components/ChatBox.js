@@ -77,6 +77,10 @@ const ChatBox = ({
     userType === "send" && inputRef.current.focus();
   }, []);
 
+  useEffect(() => {
+    setCurrentMessage(currentMessage + selectedEmoji);
+  }, [selectedEmoji]);
+
   return (
     <Card
       extra={
