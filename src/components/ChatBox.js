@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useContext, useRef } from "react";
-import MessageList from "../components/MessageList";
+import MessageList from "../components/Message/MessageList";
 import Emojis from "../components/Emoji/Emojis";
 import { formatAMPM } from "../util/time";
 import { Button, Row, Col, Avatar, Card, Input, Tooltip, Popover } from "antd";
