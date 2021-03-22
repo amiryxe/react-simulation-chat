@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import { Button } from "antd";
-import MainContext from "../context/mainContext";
+import MainContext from "../../context/mainContext";
 
 const EmojiItem = ({ emoji }) => {
   const { selectedEmoji, setSelectedEmoji } = useContext(MainContext);

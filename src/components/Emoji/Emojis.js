@@ -1,7 +1,7 @@
-import React, { useContext } from 'react';
-import EmojiItem from './EmojiItem';
-import MainContext from '../context/mainContext';
-import './Emojis.css';
+import React, { useContext } from "react";
+import EmojiItem from "./EmojiItem";
+import MainContext from "../../context/mainContext";
+import "./Emojis.css";
 
 const Emojis = () => {
   const emojiContext = useContext(MainContext);
@@ -9,7 +9,7 @@ const Emojis = () => {
   const { emojiList } = emojiContext;
 
   return (
-    <ul className='emoji-list'>
+    <ul className="emoji-list">
       {emojiList.map((item) => (
         <EmojiItem key={item.id} emoji={item.emoji} />
       ))}
