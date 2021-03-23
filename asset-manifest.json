@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/react-simulation-chat/static/css/main.0630de9a.chunk.css",
-    "main.js": "/react-simulation-chat/static/js/main.a65a337b.chunk.js",
-    "main.js.map": "/react-simulation-chat/static/js/main.a65a337b.chunk.js.map",
+    "main.js": "/react-simulation-chat/static/js/main.2c38db5a.chunk.js",
+    "main.js.map": "/react-simulation-chat/static/js/main.2c38db5a.chunk.js.map",
     "runtime-main.js": "/react-simulation-chat/static/js/runtime-main.37ac8f95.js",
     "runtime-main.js.map": "/react-simulation-chat/static/js/runtime-main.37ac8f95.js.map",
     "static/css/2.fe56744f.chunk.css": "/react-simulation-chat/static/css/2.fe56744f.chunk.css",
     "static/js/2.e4453747.chunk.js": "/react-simulation-chat/static/js/2.e4453747.chunk.js",
     "static/js/2.e4453747.chunk.js.map": "/react-simulation-chat/static/js/2.e4453747.chunk.js.map",
     "index.html": "/react-simulation-chat/index.html",
-    "precache-manifest.59737594c48f89e4391454f01afd688a.js": "/react-simulation-chat/precache-manifest.59737594c48f89e4391454f01afd688a.js",
+    "precache-manifest.c5d70765c2626faaa4cd85dd9c8e9d82.js": "/react-simulation-chat/precache-manifest.c5d70765c2626faaa4cd85dd9c8e9d82.js",
     "service-worker.js": "/react-simulation-chat/service-worker.js",
     "static/css/2.fe56744f.chunk.css.map": "/react-simulation-chat/static/css/2.fe56744f.chunk.css.map",
     "static/css/main.0630de9a.chunk.css.map": "/react-simulation-chat/static/css/main.0630de9a.chunk.css.map",
@@ -22,6 +22,6 @@
     "static/css/2.fe56744f.chunk.css",
     "static/js/2.e4453747.chunk.js",
     "static/css/main.0630de9a.chunk.css",
-    "static/js/main.a65a337b.chunk.js"
+    "static/js/main.2c38db5a.chunk.js"
   ]
 }
