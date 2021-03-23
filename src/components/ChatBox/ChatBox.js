@@ -1,12 +1,12 @@
 import React, { useState, useEffect, useContext, useRef } from "react";
-import MessageList from "../components/Message/MessageList";
-import Emojis from "../components/Emoji/Emojis";
-import { formatAMPM } from "../util/time";
+import MessageList from "../../components/Message/MessageList";
+import Emojis from "../../components/Emoji/Emojis";
+import { formatAMPM } from "../../util/time";
 import { Button, Row, Col, Avatar, Card, Input, Tooltip, Popover } from "antd";
 import { SmileOutlined, SettingOutlined } from "@ant-design/icons";
-import ModalSetting from "../components/ModalSetting";
-import Typing from "../components/elements/Typing";
-import MainContext from "../context/mainContext";
+import ModalSetting from "./ModalSetting";
+import Typing from "../../components/elements/Typing";
+import MainContext from "../../context/mainContext";
 
 const ChatBox = ({
   messages,

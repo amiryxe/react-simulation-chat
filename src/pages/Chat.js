@@ -1,5 +1,5 @@
 import React, { useState, useContext } from "react";
-import ChatBox from "../components/ChatBox";
+import ChatBox from "../components/ChatBox/ChatBox";
 import { Row, Col, Layout, Typography } from "antd";
 import Pattern from "../assets/img/pattern.png";
 import MainContext from "../context/mainContext";

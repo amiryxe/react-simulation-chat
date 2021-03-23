@@ -1,5 +1,5 @@
 import React, { useContext, useState } from "react";
-import MainContext from "../context/mainContext";
+import MainContext from "../../context/mainContext";
 import { Modal, Input, Button } from "antd";
 import { SketchPicker } from "react-color";
 
