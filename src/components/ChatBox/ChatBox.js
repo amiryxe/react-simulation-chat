@@ -18,9 +18,7 @@ const ChatBox = ({
   isTyping,
 }) => {
   const [visible, setVisible] = useState(false);
-
   const [currentMessage, setCurrentMessage] = useState("");
-
   const inputRef = useRef(null);
 
   const {
@@ -30,6 +28,7 @@ const ChatBox = ({
     setReceiverIsTyping,
   } = useContext(MainContext);
 
+  // handle send messages
   const sendMessageHandler = (e) => {
     e.preventDefault();
 
@@ -50,8 +49,8 @@ const ChatBox = ({
     setCurrentMessage("");
   };
 
+  // handle timer of typing status
   let isTypingTimer;
-
   const handleKeyUp = (e) => {
     isTypingTimer = setTimeout(() => {
       setSenderIsTyping(false);
@@ -59,6 +58,7 @@ const ChatBox = ({
     }, 1000);
   };
 
+  // handle write message in input and typing status
   const messageChangeHandler = (e, user) => {
     setCurrentMessage(e.target.value);
 

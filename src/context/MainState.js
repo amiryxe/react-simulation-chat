@@ -60,7 +60,6 @@ const MainState = (props) => {
   const [messageText, setMessageText] = useState("");
   const [senderBgColor, setSenderBgColor] = useState("#777");
   const [receiverBgColor, setReceiverBgColor] = useState("#eee");
-
   const [senderIsTyping, setSenderIsTyping] = useState(false);
   const [receiverIsTyping, setReceiverIsTyping] = useState(false);
 
