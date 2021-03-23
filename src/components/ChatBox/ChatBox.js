@@ -19,8 +19,6 @@ const ChatBox = ({
 }) => {
   const [visible, setVisible] = useState(false);
 
-  const [showTyping, setShowTyping] = useState(false);
-
   const [currentMessage, setCurrentMessage] = useState("");
 
   const inputRef = useRef(null);
@@ -85,6 +83,7 @@ const ChatBox = ({
 
   useEffect(() => {
     setCurrentMessage(currentMessage + selectedEmoji);
+    setSelectedEmoji("");
   }, [selectedEmoji]);
 
   return (
