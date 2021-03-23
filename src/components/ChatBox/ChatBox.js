@@ -15,6 +15,7 @@ const ChatBox = ({
   userName,
   color,
   background,
+  isTyping,
 }) => {
   const [visible, setVisible] = useState(false);
 
@@ -27,8 +28,8 @@ const ChatBox = ({
   const {
     selectedEmoji,
     setSelectedEmoji,
-    messageText,
-    setMessageText,
+    setSenderIsTyping,
+    setReceiverIsTyping,
   } = useContext(MainContext);
 
   const sendMessageHandler = (e) => {
@@ -55,14 +56,20 @@ const ChatBox = ({
 
   const handleKeyUp = (e) => {
     isTypingTimer = setTimeout(() => {
-      setShowTyping(false);
+      setSenderIsTyping(false);
+      setReceiverIsTyping(false);
     }, 1000);
   };
 
   const messageChangeHandler = (e, user) => {
     setCurrentMessage(e.target.value);
 
-    setShowTyping(true);
+    if (user == "send") {
+      setSenderIsTyping(true);
+    } else {
+      setReceiverIsTyping(true);
+    }
+
     clearTimeout(isTypingTimer);
   };
 
@@ -96,7 +103,7 @@ const ChatBox = ({
 
           <span style={{ position: "relative" }}>
             {userName}
-            <Typing visible={showTyping} />
+            <Typing visible={isTyping} />
           </span>
 
           <Button

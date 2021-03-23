@@ -61,6 +61,9 @@ const MainState = (props) => {
   const [senderBgColor, setSenderBgColor] = useState("#777");
   const [receiverBgColor, setReceiverBgColor] = useState("#eee");
 
+  const [senderIsTyping, setSenderIsTyping] = useState(false);
+  const [receiverIsTyping, setReceiverIsTyping] = useState(false);
+
   return (
     <MainContext.Provider
       value={{
@@ -84,6 +87,12 @@ const MainState = (props) => {
 
         receiverBgColor,
         setReceiverBgColor,
+
+        senderIsTyping,
+        setSenderIsTyping,
+
+        receiverIsTyping,
+        setReceiverIsTyping,
       }}
     >
       {props.children}

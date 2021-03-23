@@ -35,6 +35,8 @@ const Chat = () => {
     receiverUserName,
     senderBgColor,
     receiverBgColor,
+    receiverIsTyping,
+    senderIsTyping,
   } = useContext(MainContext);
 
   return (
@@ -52,6 +54,7 @@ const Chat = () => {
               background={{ pattern: Pattern, color: senderBgColor }}
               messages={messages}
               setMessages={setMessages}
+              isTyping={receiverIsTyping}
             />
           </Col>
           <Col md={24} lg={12} align="middle">
@@ -62,6 +65,7 @@ const Chat = () => {
               background={{ pattern: Pattern, color: receiverBgColor }}
               messages={messages}
               setMessages={setMessages}
+              isTyping={senderIsTyping}
             />
           </Col>
         </Row>
