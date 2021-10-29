@@ -18,6 +18,7 @@ const ChatBox = ({
   background,
   isTyping,
 }) => {
+
   const [visible, setVisible] = useState(false);
   const [currentMessage, setCurrentMessage] = useState("");
 
@@ -78,8 +79,10 @@ const ChatBox = ({
   }, [messages]);
 
   useEffect(() => {
-    setCurrentMessage(currentMessage + selectedEmoji);
-    setSelectedEmoji("");
+    if (userType === selectedEmoji.userType) {
+      setCurrentMessage(currentMessage + selectedEmoji.emoji);
+      setSelectedEmoji("");
+    }
   }, [selectedEmoji]);
 
   return (
@@ -132,7 +135,7 @@ const ChatBox = ({
         <div className="input-chat">
           <Row>
             <Col flex={2} style={{ textAlign: "left" }}>
-              <Popover content={Emojis} title="Select Emoji" trigger="click">
+              <Popover content={<Emojis userType={userType} />} title="Select Emoji" trigger="click">
                 <Tooltip placement="bottom" title="Emoji">
                   <Button shape="circle" icon={<SmileOutlined />} />
                 </Tooltip>

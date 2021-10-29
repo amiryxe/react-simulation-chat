@@ -59,6 +59,7 @@ const Chat = () => {
               isTyping={receiverIsTyping}
             />
           </Col>
+
           <Col md={24} lg={12} align="middle">
             <ChatBox
               userType="receive"

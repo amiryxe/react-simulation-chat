@@ -2,11 +2,14 @@ import React, { useContext } from "react";
 import { Button } from "antd";
 import MainContext from "../../context/mainContext";
 
-const EmojiItem = ({ emoji }) => {
-  const { selectedEmoji, setSelectedEmoji } = useContext(MainContext);
+const EmojiItem = ({ emoji, userType }) => {
+  const { setSelectedEmoji } = useContext(MainContext);
 
   const selectEmojiClickHandler = (emoji) => {
-    setSelectedEmoji(emoji);
+    setSelectedEmoji({
+      emoji,
+      userType
+    });
   };
 
   return (

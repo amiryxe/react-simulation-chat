@@ -16,7 +16,7 @@ const ModalSetting = ({ userName, visible, setVisible, userType }) => {
   const [userNameText, setUserNameText] = useState(userName);
 
   const [bgColor, setBgColor] = useState(
-    userType == "send" ? senderBgColor : receiverBgColor
+    userType === "send" ? senderBgColor : receiverBgColor
   );
 
   const [showColorPicker, setShowColorPicker] = useState(false);
