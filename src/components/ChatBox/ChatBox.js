@@ -78,10 +78,6 @@ const ChatBox = ({
   }, [messages]);
 
   useEffect(() => {
-    userType === "send" && inputRef.current.focus();
-  }, []);
-
-  useEffect(() => {
     setCurrentMessage(currentMessage + selectedEmoji);
     setSelectedEmoji("");
   }, [selectedEmoji]);
@@ -149,7 +145,7 @@ const ChatBox = ({
                 onKeyUp={handleKeyUp}
                 value={currentMessage}
                 placeholder="Type a message..."
-                ref={inputRef}
+                autoFocus={userType === "send"}
               />
             </form>
           </Col>
