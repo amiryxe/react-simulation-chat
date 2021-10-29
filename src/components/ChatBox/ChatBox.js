@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext, useRef } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import MessageList from "../../components/Message/MessageList";
 import Emojis from "../../components/Emoji/Emojis";
 import { formatAMPM } from "../../util/time";
@@ -19,7 +19,6 @@ const ChatBox = ({
 }) => {
   const [visible, setVisible] = useState(false);
   const [currentMessage, setCurrentMessage] = useState("");
-  const inputRef = useRef(null);
 
   const {
     selectedEmoji,
