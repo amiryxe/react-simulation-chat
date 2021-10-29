@@ -51,6 +51,7 @@ const Chat = () => {
             <ChatBox
               userType="send"
               userName={senderUserName}
+              friendName={receiverUserName}
               color="Cyan"
               background={{ pattern: Pattern, color: senderBgColor }}
               messages={messages}
@@ -62,6 +63,7 @@ const Chat = () => {
             <ChatBox
               userType="receive"
               userName={receiverUserName}
+              friendName={senderUserName}
               color="Green"
               background={{ pattern: Pattern, color: receiverBgColor }}
               messages={messages}

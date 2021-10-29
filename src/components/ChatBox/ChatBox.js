@@ -13,6 +13,7 @@ const ChatBox = ({
   setMessages,
   userType,
   userName,
+  friendName,
   color,
   background,
   isTyping,
@@ -92,11 +93,11 @@ const ChatBox = ({
               marginRight: "0.5rem",
             }}
           >
-            {userName[0].toUpperCase()}
+            {friendName[0].toUpperCase()}
           </Avatar>
 
           <span style={{ position: "relative" }}>
-            {userName}
+            {friendName}
             <Typing visible={isTyping} />
           </span>
 
