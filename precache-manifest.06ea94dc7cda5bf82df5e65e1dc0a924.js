@@ -1,27 +1,27 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "a4d0b00ef8ca9fc864dfa3394490c283",
+    "revision": "769444d5187c4af834530872804f4622",
     "url": "/react-simulation-chat/index.html"
   },
   {
-    "revision": "1cff4f7070c59a8ac1e1",
+    "revision": "89213f1874604ea69e4f",
     "url": "/react-simulation-chat/static/css/2.fe56744f.chunk.css"
   },
   {
-    "revision": "b38e398e5aa53e11c0ff",
-    "url": "/react-simulation-chat/static/css/main.0630de9a.chunk.css"
+    "revision": "aa4b482e947fe6c97431",
+    "url": "/react-simulation-chat/static/css/main.435b6c6a.chunk.css"
   },
   {
-    "revision": "1cff4f7070c59a8ac1e1",
-    "url": "/react-simulation-chat/static/js/2.e4453747.chunk.js"
+    "revision": "89213f1874604ea69e4f",
+    "url": "/react-simulation-chat/static/js/2.33e1ae6b.chunk.js"
   },
   {
     "revision": "3453b8997016469371284a28c0e873e2",
-    "url": "/react-simulation-chat/static/js/2.e4453747.chunk.js.LICENSE.txt"
+    "url": "/react-simulation-chat/static/js/2.33e1ae6b.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "b38e398e5aa53e11c0ff",
-    "url": "/react-simulation-chat/static/js/main.2c38db5a.chunk.js"
+    "revision": "aa4b482e947fe6c97431",
+    "url": "/react-simulation-chat/static/js/main.46973a96.chunk.js"
   },
   {
     "revision": "7617e1f2c6f583010985",
