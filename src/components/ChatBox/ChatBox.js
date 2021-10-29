@@ -2,8 +2,8 @@ import React, { useState, useEffect, useContext } from "react";
 import MessageList from "../../components/Message/MessageList";
 import Emojis from "../../components/Emoji/Emojis";
 import { formatAMPM } from "../../util/time";
-import { Button, Row, Col, Avatar, Card, Input, Tooltip, Popover } from "antd";
-import { SmileOutlined, SettingOutlined } from "@ant-design/icons";
+import { Button, Row, Col, Avatar, Card, Input, Tooltip, Popover, Tag } from "antd";
+import { SmileOutlined, SettingOutlined, ArrowUpOutlined } from "@ant-design/icons";
 import ModalSetting from "./ModalSetting";
 import Typing from "../../components/elements/Typing";
 import MainContext from "../../context/mainContext";
@@ -83,75 +83,83 @@ const ChatBox = ({
   }, [selectedEmoji]);
 
   return (
-    <Card
-      extra={
-        <div>
-          <Avatar
-            style={{
-              color: `dark${color}`,
-              backgroundColor: `light${color}`,
-              marginRight: "0.5rem",
-            }}
-          >
-            {friendName[0].toUpperCase()}
-          </Avatar>
+    <>
+      <Card
+        extra={
+          <div>
+            <Avatar
+              style={{
+                color: `dark${color}`,
+                backgroundColor: `light${color}`,
+                marginRight: "0.5rem",
+              }}
+            >
+              {friendName[0].toUpperCase()}
+            </Avatar>
 
-          <span style={{ position: "relative" }}>
-            {friendName}
-            <Typing visible={isTyping} />
-          </span>
+            <span style={{ position: "relative" }}>
+              {friendName}
+              <Typing visible={isTyping} />
+            </span>
 
-          <Button
-            style={{ float: "right" }}
-            shape="circle"
-            icon={<SettingOutlined />}
-            onClick={() => setVisible(true)}
-          />
-        </div>
-      }
-      bordered={false}
-      style={{ width: 350 }}
-    >
-      <MessageList
-        messages={messages}
-        userType={userType}
-        background={background}
-      />
-
-      {visible && (
-        <ModalSetting
+            <Button
+              style={{ float: "right" }}
+              shape="circle"
+              icon={<SettingOutlined />}
+              onClick={() => setVisible(true)}
+            />
+          </div>
+        }
+        bordered={false}
+        style={{ width: 350 }}
+      >
+        <MessageList
+          messages={messages}
           userType={userType}
-          userName={userName}
-          color={color}
-          visible={visible}
-          setVisible={setVisible}
+          background={background}
         />
-      )}
 
-      <div className="input-chat">
-        <Row>
-          <Col flex={2} style={{ textAlign: "left" }}>
-            <Popover content={Emojis} title="Select Emoji" trigger="click">
-              <Tooltip placement="bottom" title="Emoji">
-                <Button shape="circle" icon={<SmileOutlined />} />
-              </Tooltip>
-            </Popover>
-          </Col>
+        {visible && (
+          <ModalSetting
+            userType={userType}
+            userName={userName}
+            color={color}
+            visible={visible}
+            setVisible={setVisible}
+          />
+        )}
 
-          <Col flex={10}>
-            <form onSubmit={sendMessageHandler}>
-              <Input
-                onChange={(e) => messageChangeHandler(e, userType)}
-                onKeyUp={handleKeyUp}
-                value={currentMessage}
-                placeholder="Type a message..."
-                autoFocus={userType === "send"}
-              />
-            </form>
-          </Col>
-        </Row>
-      </div>
-    </Card>
+        <div className="input-chat">
+          <Row>
+            <Col flex={2} style={{ textAlign: "left" }}>
+              <Popover content={Emojis} title="Select Emoji" trigger="click">
+                <Tooltip placement="bottom" title="Emoji">
+                  <Button shape="circle" icon={<SmileOutlined />} />
+                </Tooltip>
+              </Popover>
+            </Col>
+
+            <Col flex={10}>
+              <form onSubmit={sendMessageHandler}>
+                <Input
+                  onChange={(e) => messageChangeHandler(e, userType)}
+                  onKeyUp={handleKeyUp}
+                  value={currentMessage}
+                  placeholder="Type a message..."
+                  autoFocus={userType === "send"}
+                />
+              </form>
+            </Col>
+          </Row>
+        </div>
+
+      </Card>
+
+      <Tag color="geekblue" style={{ marginTop: '2rem' }}>
+        <ArrowUpOutlined style={{ marginRight: '.5rem' }} />
+        You are {userName}
+      </Tag>
+    </>
   );
 };
 
