@@ -44,6 +44,7 @@ const Chat = () => {
       <Layout style={{ padding: "3rem", background: "transparent" }}>
         <Title style={{ margin: "2rem 0", textAlign: "center", color: "#fff" }}>
           React Simulation Chat
+          <p style={{ fontSize: '1rem' }}>unreal and simulation chat with reactjs</p>
         </Title>
         <Row>
           <Col md={24} lg={12} align="middle">
