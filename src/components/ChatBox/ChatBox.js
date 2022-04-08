@@ -63,7 +63,7 @@ const ChatBox = ({
   const messageChangeHandler = (e, user) => {
     setCurrentMessage(e.target.value);
 
-    if (user == "send") {
+    if (user === "send") {
       setSenderIsTyping(true);
     } else {
       setReceiverIsTyping(true);
