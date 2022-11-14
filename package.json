@@ -11,7 +11,7 @@
     "react": "^16.13.1",
     "react-color": "^2.19.3",
     "react-dom": "^16.13.1",
-    "react-scripts": "3.4.1",
+    "react-scripts": "5.0.1",
     "sass": "^1.49.11",
     "typeface-montserrat": "0.0.75",
     "vazir-font": "^26.0.2"
